@@ -5,7 +5,8 @@ pipeline {
     stage ('Dotnet Restore') {
       steps {
         script {
-          sh 'dotnet restore **/*.sln'
+          def slnFile = sh(script: 'find . -name "*.sln"', returnStdout: true).trim()
+          sh "dotnet restore ${slnFile}"
         }
       }
     }
