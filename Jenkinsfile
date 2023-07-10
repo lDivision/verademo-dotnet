@@ -13,7 +13,7 @@ pipeline {
 
     stage ('Veracode SCA Scan') {
       steps {
-        sh 'curl -sSL "https://download.sourceclear.com/ci.sh" | sh' --loud
+        sh 'curl -sSL  https://download.sourceclear.com/ci.sh | sh -s -- scan --url https://github.com/lDivision/NodeGoat'
       }
     }
   }
