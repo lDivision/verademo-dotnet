@@ -4,11 +4,10 @@ pipeline {
   stages {
     stage ('Dotnet Restore') {
       steps {
-        sh 'dotnet restore **/*.sln'
+        script {
+          sh 'dotnet restore **/*.sln'
+        }
       }
     }
   }
-
-
-  
 }
