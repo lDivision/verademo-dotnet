@@ -6,7 +6,7 @@ pipeline {
       steps {
         script {
           def slnFile = sh(script: 'find . -name "*.sln"', returnStdout: true).trim()
-          sh "dotnet restore ${slnFile}"
+          sh "nuget restore ${slnFile}"
         }
       }
     }
