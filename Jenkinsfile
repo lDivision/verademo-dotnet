@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    docker {image 'ldivision/ubuntu:latest'}
-  }
+  agent anu
 
   stages {
     stage ('Dotnet Restore') {
